@@ -42,8 +42,7 @@ const ConnectDB = async () => {
 
 
 
- // const pool = await mysql.createPool(
-  const db = await mysql.createPool(
+  const pool = await mysql.createPool(
   {
     host:     process.env.MYSQL_HOST,  // your MySQL host
     user:     process.env.MYSQL_USER, // your MySQL username
@@ -53,10 +52,10 @@ const ConnectDB = async () => {
   
 
   // --------------
-  // returning pool to further add querys in the database
+  // returning pool for further queries in the database
   // -------------
- // return pool;
-  return db;
+  return pool;
+  
 };
 
 
