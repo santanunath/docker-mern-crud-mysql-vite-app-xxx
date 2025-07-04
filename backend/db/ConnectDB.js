@@ -32,6 +32,7 @@ const ConnectDB = async () => {
     user: process.env.DB_USER,
     password: process.env.DB_PASSWORD,
     database: process.env.DB_DATABASE,
+    
     waitForConnections: process.env.DB_WAITFORCONNECTIONS,
     connectionLimit: process.env.DB_CONNECTIONLIMIT,
     queueLimit: process.env.DB_QUEUELIMIT
