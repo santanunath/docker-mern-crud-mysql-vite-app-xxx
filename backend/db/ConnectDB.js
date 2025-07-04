@@ -42,8 +42,16 @@ const pool = await mysql.createPool(
     password: process.env.MYSQL_PASSWORD, // your MySQL password
     database: process.env.MYSQL_DATABASE  // the database you want to connect
  })
+  
 
-                                      
+  // --------------
+  // returning pool to further add querys 
+  // in the database we did till now
+  // -------------
+  return pool;
+};
+
+
 // ----------------
 // exporting the function
 // ----------------
