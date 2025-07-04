@@ -77,7 +77,7 @@ router.post("/", async (req, res) => {
 
 
 
-// UPDATE:
+// (PUT) UPDATE:
 // this function UPDATES a already created user in database 
 // by taking a id, name and email. id is used to find the user 
 // and we use the given name and email to create changes 
@@ -125,7 +125,7 @@ router.put("/", async (req, res) => {
 
 
 
-// DELETE:
+// (DELETE)
 // this function DELETES a user from the database 
 // by only taking the id for the user as input from req.body
 // ----------------------
