@@ -28,7 +28,7 @@ router.get('/', async (req, res) => {
 
 
 
-// (ADD/INSERT)
+// (POST) ADD/INSERT:
 // this function checks if all the fields are filled, 
 // then checks if the user already exists then INSERTS 
 // the data from req.body into the database and also 
