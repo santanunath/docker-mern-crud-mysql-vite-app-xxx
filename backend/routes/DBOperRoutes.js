@@ -5,6 +5,7 @@ const router  = express.Router()
 
 const DB_TABLENAME = 'tbl_users';
 
+
 // (GET)
 // this GET function sends all the results to the client 
 // stored in the database as a json object
