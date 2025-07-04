@@ -16,6 +16,7 @@ const ConnectDB = async () => {
 
 
 /*
+
   const pool = await mysql.createPool({
     host: process.env.DB_HOST,
     user: process.env.DB_USER,
@@ -24,7 +25,8 @@ const ConnectDB = async () => {
     waitForConnections: process.env.DB_WAITFORCONNECTIONS,
     connectionLimit: process.env.DB_CONNECTIONLIMIT,
     queueLimit: process.env.DB_QUEUELIMIT
-  }
+  });
+  
 */                                     
 
 
