@@ -10,11 +10,9 @@ const router = require('./routes/DBOperRoutes');
 const bodyParser = require('body-parser');
 const cors = require("cors")
 
+
 dotenv.config();
 
-// using the port in environmental variable or 5000
-// -----------
-const PORT = process.env.PORT || 5000;
 
 // middleware to parse incoming request in bodies
 // ------------
@@ -45,8 +43,12 @@ let pool;
 
     
     // start the server
-    // -------------
+    // using the port in environmental variable or 5000
+    // -----------
+    // const PORT = process.env.PORT || 5000;
+    const PORT = 5000;
     app.listen(PORT, () => {
-        console.log(`Example app listening on port http://localhost:${port}`);
+        console.log(`Example app listening on port:${port}`);
     });
+    
 })();
