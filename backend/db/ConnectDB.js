@@ -9,11 +9,6 @@ const mysql = require("mysql2/promise");
 // *****************
 // MYSQL DATABASE CONNECTION
 // *****************
-// below values should be same as 
-// environment variables for 'backend'
-// defined in file 'docker-compose.yml'
-// ****************
-
 // --------------------
 // the 'async' 'await' function 
 // which connects to the database 
