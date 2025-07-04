@@ -32,7 +32,7 @@ services:
     depends_on:
       - db
     ports:
-      - 5000:5000 # port defined in index.js, Dockerfile 
+      - 5000:5000 # port defined in /backend/index.js, Dockerfile 
     environment:
       MYSQL_HOST: db           # used in /backend/db/ConnectDB.js
       MYSQL_DATABASE: test_db  # used in /backend/db/ConnectDB.js
