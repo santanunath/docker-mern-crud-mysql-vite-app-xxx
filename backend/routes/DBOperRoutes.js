@@ -3,6 +3,8 @@ const express = require("express")
 const router = express.Router()
 
 
+const DB_TABLENAME = 'tbl_users';
+
 // GET:
 // this GET function sends all the results to the client 
 // stored in the database as a json object
@@ -11,7 +13,9 @@ router.get('/', async (req, res) => {
     
     try 
     {
-        const [results] = await req.pool.query(`SELECT * FROM ${process.env.DB_TABLENAME}`);
+        //const [results] = await req.pool.query(`SELECT * FROM ${process.env.DB_TABLENAME}`);
+        const [results] = await req.pool.query(`SELECT * FROM ${DB_TABLENAME}`);
+        
         res.json(results);
     } 
     catch (error) 
@@ -44,15 +48,20 @@ router.post("/", async (req, res) => {
     {
         // check if the user already exists
         // ---------
-        const [checkResults] = await req.pool.query(`SELECT COUNT(*) AS count FROM ${process.env.DB_TABLENAME} WHERE email = ?`, [email]);
+        
+       // const [checkResults] = await req.pool.query(`SELECT COUNT(*) AS count FROM ${process.env.DB_TABLENAME} WHERE email = ?`, [email]);
+        const [checkResults] = await req.pool.query(`SELECT COUNT(*) AS count FROM ${DB_TABLENAME} WHERE email = ?`, [email]);
+
+        
         if (checkResults[0].count > 0) {
             return res.status(409).send('User already exists');
         }
 
         // create the new user
         // -----------------
-        const [insertResults] = await req.pool.query(`INSERT INTO ${process.env.DB_TABLENAME} (name, email) VALUES (?, ?)`, [name, email]);
-
+       // const [insertResults] = await req.pool.query(`INSERT INTO ${process.env.DB_TABLENAME} (name, email) VALUES (?, ?)`, [name, email]);
+        const [insertResults] = await req.pool.query(`INSERT INTO ${DB_TABLENAME} (name, email) VALUES (?, ?)`, [name, email]);
+        
         // send a success response
         // ---------------
         res.status(201).json({ id: insertResults.insertId, name, email });
@@ -88,16 +97,18 @@ router.put("/", async (req, res) => {
     {
         // check if the user exists
         // ---------------
-        const [checkIfUserExists] = await req.pool.query(`SELECT COUNT(*) AS count FROM ${process.env.DB_TABLENAME} WHERE id = ?`, [id])
-
+       // const [checkIfUserExists] = await req.pool.query(`SELECT COUNT(*) AS count FROM ${process.env.DB_TABLENAME} WHERE id = ?`, [id])
+        const [checkIfUserExists] = await req.pool.query(`SELECT COUNT(*) AS count FROM ${DB_TABLENAME} WHERE id = ?`, [id])
+        
         if (checkIfUserExists[0].count === 0) {
             return res.status(404).send("User does not exist.")
         }
 
         // update the user
         // --------------
-        await req.pool.query(`UPDATE ${process.env.DB_TABLENAME} SET name = ?, email = ? where id = ?`, [name, email, id])
-
+      //  await req.pool.query(`UPDATE ${process.env.DB_TABLENAME} SET name = ?, email = ? where id = ?`, [name, email, id])
+        await req.pool.query(`UPDATE ${DB_TABLENAME} SET name = ?, email = ? where id = ?`, [name, email, id])
+        
         // send a success response
         // --------------
         res.status(200).json({ id, name, email })
@@ -132,16 +143,18 @@ router.delete("/", async (req, res) => {
     {
         // check if the user exists
         // -----------------
-        const [checkIfUserExists] = await req.pool.query(`SELECT COUNT(*) AS count FROM ${process.env.DB_TABLENAME} WHERE id = ?`, [id])
-
+       // const [checkIfUserExists] = await req.pool.query(`SELECT COUNT(*) AS count FROM ${process.env.DB_TABLENAME} WHERE id = ?`, [id])
+        const [checkIfUserExists] = await req.pool.query(`SELECT COUNT(*) AS count FROM ${DB_TABLENAME} WHERE id = ?`, [id])
+        
         if (checkIfUserExists[0].count === 0) {
             return res.status(404).send("User does not exist.")
         }
 
         // delete the user
         // -------------
-        await req.pool.query(`DELETE FROM ${process.env.DB_TABLENAME} WHERE id = ?`, [id])
-
+       // await req.pool.query(`DELETE FROM ${process.env.DB_TABLENAME} WHERE id = ?`, [id])
+        await req.pool.query(`DELETE FROM ${DB_TABLENAME} WHERE id = ?`, [id])
+        
         // send a success response
         // -------------
         res.status(200).send(`id ${id} deleted successfuly`)
