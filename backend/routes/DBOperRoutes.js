@@ -41,7 +41,8 @@ router.post("/", async (req, res) => {
 
     // check if 'name' or 'email' is missing or empty
     // ------------
-    if (!name || !email || name === '' || email === '') {
+    if (!name || !email || name === '' || email === '') 
+    {
         return res.status(400).send('All fields are required');
     }
 
@@ -54,7 +55,8 @@ router.post("/", async (req, res) => {
         const [checkResults] = await req.pool.query(`SELECT COUNT(*) AS count FROM ${DB_TABLENAME} WHERE email = ?`, [email]);
 
         
-        if (checkResults[0].count > 0) {
+        if (checkResults[0].count > 0) 
+        {
             return res.status(409).send('User already exists');
         }
 
@@ -90,7 +92,8 @@ router.put("/", async (req, res) => {
 
     // check if the id exists in the database
     // ---------------
-    if (!id || !name || !email || id === "" || name === "" || email === "") {
+    if (!id || !name || !email || id === "" || name === "" || email === "") 
+    {
         return res.status(400).send('All fields are required')
     }
 
@@ -101,7 +104,8 @@ router.put("/", async (req, res) => {
        // const [checkIfUserExists] = await req.pool.query(`SELECT COUNT(*) AS count FROM ${process.env.DB_TABLENAME} WHERE id = ?`, [id])
         const [checkIfUserExists] = await req.pool.query(`SELECT COUNT(*) AS count FROM ${DB_TABLENAME} WHERE id = ?`, [id])
         
-        if (checkIfUserExists[0].count === 0) {
+        if (checkIfUserExists[0].count === 0) 
+        {
             return res.status(404).send("User does not exist.")
         }
 
@@ -136,7 +140,8 @@ router.delete("/", async (req, res) => {
 
     // check if the 'id' exists in the database
     // -----------------
-    if (!id || id === "") {
+    if (!id || id === "") 
+    {
         return res.status(400).send('All fields are required')
     }
 
@@ -147,7 +152,8 @@ router.delete("/", async (req, res) => {
        // const [checkIfUserExists] = await req.pool.query(`SELECT COUNT(*) AS count FROM ${process.env.DB_TABLENAME} WHERE id = ?`, [id])
         const [checkIfUserExists] = await req.pool.query(`SELECT COUNT(*) AS count FROM ${DB_TABLENAME} WHERE id = ?`, [id])
         
-        if (checkIfUserExists[0].count === 0) {
+        if (checkIfUserExists[0].count === 0) 
+        {
             return res.status(404).send("User does not exist.")
         }
 
@@ -171,7 +177,7 @@ router.delete("/", async (req, res) => {
 })
 
 
-// exporting this router function 
-// to be using it in the index.js
+// exporting this 'router' function 
+// to be used in 'index.js' file
 // -----------------
 module.exports = router;
