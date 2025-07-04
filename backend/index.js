@@ -4,12 +4,12 @@
 // ----------------
 const express = require('express');
 const dotenv = require('dotenv');
-const ConnectDB = require('./db/ConnectDB');
 const app = express();
-const router = require('./routes/DBOperRoutes');
 const bodyParser = require('body-parser');
-const cors = require("cors")
+const cors = require("cors");
 
+const ConnectDB = require('./db/ConnectDB');     // user defined 
+const router = require('./routes/DBOperRoutes'); // user defined 
 
 dotenv.config();
 
