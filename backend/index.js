@@ -14,7 +14,7 @@ const router = require('./routes/DBOperRoutes'); // user defined
 dotenv.config();
 
 
-// middleware to parse incoming request in bodies
+// middleware to parse incoming request in 'bodies'
 // ------------
 app.use(express.json());
 app.use(bodyParser.json());
