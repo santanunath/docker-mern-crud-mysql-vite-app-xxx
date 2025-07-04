@@ -5,11 +5,9 @@ const mysql = require("mysql2/promise");
 
 
 
-
 // *****************
 // MYSQL DATABASE CONNECTION
 // *****************
-// --------------------
 // the 'async' 'await' function 
 // which connects to the database 
 // using  environment variables for 'backend'
