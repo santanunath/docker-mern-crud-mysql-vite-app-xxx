@@ -5,7 +5,7 @@ const router  = express.Router()
 
 const DB_TABLENAME = 'tbl_users';
 
-// GET:
+// (GET)
 // this GET function sends all the results to the client 
 // stored in the database as a json object
 // -------------------
@@ -28,7 +28,7 @@ router.get('/', async (req, res) => {
 
 
 
-// ADD/INSERT:
+// (ADD/INSERT)
 // this function checks if all the fields are filled, 
 // then checks if the user already exists then INSERTS 
 // the data from req.body into the database and also 
