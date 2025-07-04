@@ -30,12 +30,12 @@ https://github.com/mushfiqurniazzz/Mysql-CRUD-Operations-With-Nodejs-And-Reactjs
 3. <b>Setup Environment Variables</b>:     
    Create a `.env` file in the root of your project directory and add the variables given in `.env.sample`    
 
-4. <b>Start the Backend</b>:     
+4. <b>Start the BACKEND</b>:     
    Run the following command to start the Backend server    
    $ cd backend    
-   $ npm start
+   $ npm run start
 
-5. <b>Start the Frontend</b>:     
+5. <b>Start the FRONTEND</b>:     
    Run the following command to start the Frontend server    
    $ cd frontend    
    $ npm run dev      
