@@ -3,13 +3,11 @@
 // --------------
 const mysql = require("mysql2/promise");
 
-//const mysql = require('mysql2');
-
 
 
 
 // *****************
-// Add MYSQL DATABASE CONNECTION
+// MYSQL DATABASE CONNECTION
 // *****************
 // below values should be same as 
 // environment variables for 'backend'
