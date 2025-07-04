@@ -11,7 +11,7 @@
 
 services:
   db:
-    image: mysql
+    image: mariadb
     container_name: db
     restart: always
     volumes:
@@ -19,8 +19,8 @@ services:
     ports:
       - 3306:3306
     environment:
-      MYSQL_ROOT_PASSWORD: rootpass  # for root user login
-      MYSQL_DATABASE: crud_operations_db # creates database automatically
+      MARIADB_ROOT_PASSWORD: rootpass  # for root user login
+      MARIADB_DATABASE: crud_operations_db # creates database automatically
 
 
   backend:
