@@ -1,5 +1,5 @@
 // importing the mysql2/promise 
-// for using 'async' 'await' in conenction function and in querys
+// for using 'async' 'await' in conenction function and in queries 
 // --------------
 const mysql = require("mysql2/promise");
 
