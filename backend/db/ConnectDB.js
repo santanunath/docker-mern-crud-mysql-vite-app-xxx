@@ -19,9 +19,9 @@ const mysql = require("mysql2/promise");
 // --------------------
 // the 'async' 'await' function 
 // which connects to the database 
-// using the credentials in the .env files
+// using  environment variables for 'backend'
+// defined in the (.env files) 'docker-compose.yml' file
 //---------------------
-
 const ConnectDB = async () => {
 
 
@@ -53,8 +53,7 @@ const ConnectDB = async () => {
   
 
   // --------------
-  // returning pool to further add querys 
-  // in the database we did till now
+  // returning pool to further add querys in the database
   // -------------
  // return pool;
   return db;
