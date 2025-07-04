@@ -21,7 +21,7 @@ app.use(bodyParser.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cors())
 
-// initialize the database connection pool
+// initialize the database connection 'pool'
 // -------------
 let pool;
 
@@ -29,7 +29,7 @@ let pool;
     
     pool = await ConnectDB(); // connect to database 
 
-    // pass the pool to the routes
+    // pass the 'pool' to the routes
     // -----------
     app.use((req, res, next) => {
         req.pool = pool;
@@ -37,7 +37,7 @@ let pool;
     });
     
 
-    // use the router
+    // use the 'router'
     // -----------;;
     app.use("/", router);
 
@@ -48,7 +48,7 @@ let pool;
     // const PORT = process.env.PORT || 5000;
     const PORT = 5000;
     app.listen(PORT, () => {
-        console.log(`Example app listening on port:${port}`);
+        console.log(`Backend app listening on port:${port}`);
     });
     
 })();
