@@ -27,7 +27,7 @@ let pool;
 
 (async () => {
     
-    pool = await ConnectDB();
+    pool = await ConnectDB(); // connect to database 
 
     // pass the pool to the routes
     // -----------
