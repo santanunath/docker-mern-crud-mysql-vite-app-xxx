@@ -41,18 +41,18 @@ services:
       DB_TABLENAME: tbl_users # used in /backend/routes/DBOperRoutes.js
 
 
-  frontend:
-    container_name: frontend
-    restart: always
-    build:
-      dockerfile: Dockerfile
-      context: ./frontend
-    depends_on:
-      - backend
-    ports:
-      - 3000:3000
-    environment:
-      - BACKEND_API_URL=http://192.168.0.102:4000 # used in /src/pages/Add.jsx,Books.jsx,Update.jsx
+#  frontend:
+#    container_name: frontend
+#    restart: always
+#    build:
+#      dockerfile: Dockerfile
+#      context: ./frontend
+#    depends_on:
+#      - backend
+#    ports:
+#      - 3000:3000
+#    environment:
+#      - BACKEND_API_URL=http://192.168.0.102:5000 # used in /src/pages/Add.jsx,Books.jsx,Update.jsx
       
 
 
@@ -74,7 +74,7 @@ services:
   adminer:
     image: adminer
     container_name: adminer
-    restart: unless-stopped
+    restart: always
     ports:
       - 8080:8080
     depends_on:
