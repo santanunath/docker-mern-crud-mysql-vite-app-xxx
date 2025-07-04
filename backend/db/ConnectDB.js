@@ -6,6 +6,16 @@ const mysql = require("mysql2/promise");
 //const mysql = require('mysql2');
 
 
+
+
+// *****************
+// Add MYSQL DATABASE CONNECTION
+// *****************
+// below values should be same as 
+// environment variables for 'backend'
+// defined in file 'docker-compose.yml'
+// ****************
+
 // --------------------
 // the 'async' 'await' function 
 // which connects to the database 
@@ -30,14 +40,8 @@ const ConnectDB = async () => {
 */                                     
 
 
-// *****************
-// Add MYSQL DATABASE CONNECTION
-// *****************
-// below values should be same as 
-// environment variables for 'backend'
-// defined in file 'docker-compose.yml'
-// ****************
-const pool = await mysql.createPool(
+
+  const pool = await mysql.createPool(
   {
     host:     process.env.MYSQL_HOST,  // your MySQL host
     user:     process.env.MYSQL_USER, // your MySQL username
