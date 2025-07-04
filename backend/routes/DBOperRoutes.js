@@ -1,6 +1,6 @@
 //imports the necessary libraries and functions
 const express = require("express")
-const router = express.Router()
+const router  = express.Router()
 
 
 const DB_TABLENAME = 'tbl_users';
