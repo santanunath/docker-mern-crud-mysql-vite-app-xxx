@@ -39,7 +39,7 @@ router.post("/", async (req, res) => {
     
     const { name, email } = req.body;
 
-    // check if name or email is missing or empty
+    // check if 'name' or 'email' is missing or empty
     // ------------
     if (!name || !email || name === '' || email === '') {
         return res.status(400).send('All fields are required');
