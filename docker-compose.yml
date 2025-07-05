@@ -20,8 +20,9 @@ services:
       - 3306:3306
     environment:
       MARIADB_ROOT_PASSWORD: rootpass  # for root user login
-      MARIADB_DATABASE: crud_operations_db # creates database automatically
-
+      MARIADB_DATABASE: test_db # creates database automatically
+      MARIADB_USER: ronit
+      MARIADB_PASSWORD: gablu
 
   backend:
     container_name: backend
@@ -34,10 +35,10 @@ services:
     ports:
       - 5000:5000 # port defined in /backend/index.js, Dockerfile 
     environment:
-      MYSQL_HOST: db           # used in /backend/db/ConnectDB.js
-      MYSQL_DATABASE: test_db  # used in /backend/db/ConnectDB.js
-      MYSQL_USER: MYSQL_USER   # used in /backend/db/ConnectDB.js
-      MYSQL_PASSWORD: MYSQL_PASSWORD # used in /backend/db/ConnectDB.js
+      MARIADB_HOST: db     # used in /backend/db/ConnectDB.js
+      MARIADB_DATABASE: test_db  # used in /backend/db/ConnectDB.js
+      MARIADB_USER: ronit   # used in /backend/db/ConnectDB.js
+      MARIADB_PASSWORD: gablu # used in /backend/db/ConnectDB.js
       DB_TABLENAME: tbl_users # used in /backend/routes/DBOperRoutes.js
 
 
