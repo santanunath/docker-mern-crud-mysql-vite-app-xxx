@@ -48,7 +48,7 @@ let pool;
     // const PORT = process.env.PORT || 5000;
     const PORT = 5000;
     app.listen(PORT, () => {
-        console.log(`Backend app listening on port:${port}`);
+        console.log(`Backend app listening on port:${PORT}`);
     });
     
 })();
