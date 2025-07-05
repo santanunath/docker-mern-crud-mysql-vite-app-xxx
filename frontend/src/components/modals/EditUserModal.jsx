@@ -15,6 +15,8 @@ import axios from "axios";
 */
 function EditUserModal() {
 
+  const BACKEND_API_URL = "http://192.168.0.102:5000";
+ 
   //using state variables 
   //for access of the input fields
   //-----------------------
@@ -65,7 +67,7 @@ server using 'axios' then shows a
       
       //put req to server
       //-----------------
-      const res = await axios.put(`http://localhost:3000`, {
+      const res = await axios.put(BACKEND_API_URL, {
         id,
         name,
         email
