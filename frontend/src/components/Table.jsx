@@ -23,6 +23,8 @@ function Table() {
   const [users, setUsers] = useState([]);
   const hasFetchedUsers = useRef(false);
 
+
+  const BACKEND_API_URL = "http://192.168.0.102:5000";
   
   // 'async' 'await' 'useEffect' function 
   // for fetching data from server
@@ -33,7 +35,7 @@ function Table() {
       
       try 
       {
-        const response = await axios.get("http://localhost:3000");
+        const response = await axios.get(BACKEND_API_URL);
         
         // setting the empty array as a json object of users got from the server
         // ---------
