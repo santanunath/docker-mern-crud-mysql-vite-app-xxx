@@ -15,7 +15,7 @@ import axios from "axios";
 */
 function EditUserModal() {
 
-  const BACKEND_API_URL = "http://192.168.0.102:5000";
+  const BACKEND_API_URL = "http://192.168.0.102:4000";
  
   //using state variables 
   //for access of the input fields
