@@ -50,8 +50,10 @@ services:
 #      context: ./frontend
 #    depends_on:
 #      - backend
-#    ports:
-#      - 3000:3000
+#     ports:
+#       - "5173:5173"
+#     command:
+#       "npm run dev -- --host"
 #    environment:
 #      - BACKEND_API_URL=http://192.168.0.102:5000 # used in /src/components/Table.jsx, /modals/
       
