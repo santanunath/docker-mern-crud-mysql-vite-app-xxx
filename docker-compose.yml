@@ -33,7 +33,7 @@ services:
     depends_on:
       - db
     ports:
-      - 5000:5000 # port defined in /backend/index.js, Dockerfile 
+      - 4000:4000 # port defined in /backend/index.js, Dockerfile 
     environment:
       MARIADB_HOST: db     # used in /backend/db/ConnectDB.js
       MARIADB_DATABASE: test_db  # used in /backend/db/ConnectDB.js
@@ -51,11 +51,11 @@ services:
 #    depends_on:
 #      - backend
 #     ports:
-#       - "5173:5173"
+#       - "5000:5000"
 #     command:
 #       "npm run dev -- --host"
 #    environment:
-#      - BACKEND_API_URL=http://192.168.0.102:5000 # used in /src/components/Table.jsx, /modals/
+#      - BACKEND_API_URL=http://192.168.0.102:4000 # used in /src/components/Table.jsx, /modals/
       
 
 
