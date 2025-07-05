@@ -21,6 +21,9 @@ function CreateUserModal({ addUser }) {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
 
+  const BACKEND_API_URL = "http://192.168.0.102:5000/";
+
+ 
 /*
   function for dynamic change of values 
   for the input fields of name field
@@ -55,7 +58,7 @@ function CreateUserModal({ addUser }) {
     {
       // post req to server
       // ----------
-      const res = await axios.post("http://localhost:3000/", {
+      const res = await axios.post(BACKEND_API_URL, {
         name,
         email
       });
