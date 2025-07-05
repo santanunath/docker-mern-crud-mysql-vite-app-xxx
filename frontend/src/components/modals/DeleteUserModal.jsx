@@ -13,6 +13,8 @@ import { toast } from "sonner";
 starting of the functional component which will DELETE users
 */
 function DeleteUserModal() {
+
+
   
   //using state variables for access of the input fields
   // ------------
