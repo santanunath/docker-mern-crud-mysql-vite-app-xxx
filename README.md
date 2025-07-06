@@ -42,6 +42,10 @@ https://github.com/mushfiqurniazzz/Mysql-CRUD-Operations-With-Nodejs-And-Reactjs
       
 > Note: vite.config.js file defines the default port number (eg.5000) for frontend 
    
+   Frontend control flow...   
+index.html -> src/main.jsx -> App.jsx -> components/Table jsx   
+       
+
 6. <b>Access the App</b>:    
     Open your web browser and navigate to `http://192.168.0.102:3000` for frontend, and `http://192.168.0.102:5000` for backend. You can now use the app locally on your machine, connected to your MySQL database using the variables specified in the `.env` file.    
 
