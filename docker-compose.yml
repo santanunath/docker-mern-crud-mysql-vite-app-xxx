@@ -42,20 +42,20 @@ services:
       DB_TABLENAME: tbl_users # used in /backend/routes/DBOperRoutes.js
 
 
-#  frontend:
-#    container_name: frontend
-#    restart: always
-#    build:
-#      dockerfile: Dockerfile
-#      context: ./frontend
-#    depends_on:
-#      - backend
-#     ports:
-#       - "5000:5000"
-#     command:
-#       "npm run dev -- --host"
-#    environment:
-#      - BACKEND_API_URL=http://192.168.0.102:4000 # used in /src/components/Table.jsx, /modals/
+  frontend:
+    container_name: frontend
+    restart: always
+    build:
+      dockerfile: Dockerfile
+      context: ./frontend
+    depends_on:
+      - backend
+    ports:
+      - "5000:5000"
+    command:
+      "npm run dev -- --host"
+    environment:
+      - BACKEND_API_URL=http://192.168.0.102:4000 # used in /src/components/Table.jsx, /modals/
       
 
 
