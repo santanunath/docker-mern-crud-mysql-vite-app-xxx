@@ -35,10 +35,10 @@ const ConnectDB = async () => {
 
   const pool = await mysql.createPool(
   {
-    host:     process.env.MYSQL_HOST,  // your MySQL host
-    user:     process.env.MYSQL_USER, // your MySQL username
-    password: process.env.MYSQL_PASSWORD, // your MySQL password
-    database: process.env.MYSQL_DATABASE  // the database you want to connect
+    host:     process.env.MARIADB_HOST,  // your MARIADB host
+    user:     process.env.MARIADB_USER, // your MARIADB username
+    password: process.env.MARIADB_PASSWORD, // your MARIADB password
+    database: process.env.MARIADB_DATABASE  // the database you want to connect
  })
   
 
