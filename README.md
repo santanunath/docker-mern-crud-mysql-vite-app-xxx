@@ -1,3 +1,5 @@
+## Tested: OK (in my Rpi3b+)
+
 <h1>MySQL CRUD - Nodejs, Reactjs</h1>
 
 
