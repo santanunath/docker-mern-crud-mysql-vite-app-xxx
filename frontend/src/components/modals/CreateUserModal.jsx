@@ -21,8 +21,8 @@ function CreateUserModal({ addUser }) {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
 
-  const BACKEND_API_URL = "http://192.168.0.102:4000/";
-
+//  const VITE_BACKEND_API_URL = "http://192.168.0.102:4000/";
+  const VITE_BACKEND_API_URL = import.meta.env.VITE_BACKEND_API_URL;
  
 /*
   function for dynamic change of values 
@@ -58,7 +58,7 @@ function CreateUserModal({ addUser }) {
     {
       // post req to server
       // ----------
-      const res = await axios.post(BACKEND_API_URL, {
+      const res = await axios.post(VITE_BACKEND_API_URL, {
         name,
         email
       });
