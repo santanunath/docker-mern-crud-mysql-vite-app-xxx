@@ -146,14 +146,3 @@ https://github.com/mushfiqurniazzz/Mysql-CRUD-Operations-With-Nodejs-And-Reactjs
 index.html -> src/main.jsx -> App.jsx -> components/Table jsx   
        
 
-6. <b>Access the App</b>:    
-    Open your web browser and navigate to `http://192.168.0.102:3000` for frontend, and `http://192.168.0.102:5000` for backend. You can now use the app locally on your machine, connected to your MySQL database using the variables specified in the `.env` file.    
-     
-http://192.168.0.102:8080 (Adminer)    
-     
-http://192.168.0.102:4000 (backend API) vite   
-
-http://192.168.0.102:5000 (frontend) vite    
-      
-7. <b>Note</b>: The project may not work if you do not install dependencies in both frontend and backend. The backend must be started first.
-</p>
