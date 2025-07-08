@@ -24,7 +24,8 @@ function Table() {
   const hasFetchedUsers = useRef(false);
 
 
-  const BACKEND_API_URL = "http://192.168.0.102:4000";
+ // const VITE_BACKEND_API_URL = "http://192.168.0.102:4000";
+  const VITE_BACKEND_API_URL = import.meta.env.VITE_BACKEND_API_URL;
   
   // 'async' 'await' 'useEffect' function 
   // for fetching data from server
@@ -35,7 +36,7 @@ function Table() {
       
       try 
       {
-        const response = await axios.get(BACKEND_API_URL);
+        const response = await axios.get(VITE_BACKEND_API_URL);
         
         // setting the empty array as a json object of users got from the server
         // ---------
