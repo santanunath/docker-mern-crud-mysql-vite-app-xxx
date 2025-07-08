@@ -1,10 +1,10 @@
-#  MYSQL_DATABASE: crud_operations_db
-#  MYSQL_USER: root
-#  MYSQL_PASSWORD: rootpass
+#  MYSQL_DATABASE: test_db
+#  MYSQL_USER: ronit
+#  MYSQL_PASSWORD: gablu
 # -----
-# contnr1: db (mysql) @port:3306
+# contnr1: db (mariadb) @port:3306
 # contnr2: backend (expressjs) @port:4000
-# contnr3: frontend (reactjs) @port:3000
+# contnr3: frontend (reactjs) @port:5000
 # contnr4: nginx (proxy) @port:80
 # contnr5: adminer @port:8080
 # ------
@@ -60,17 +60,17 @@ services:
 
 
 
-#  nginx-proxy:
-#    container_name: nginx-proxy
-#    depends_on:
-#      - backend
-#      - frontend
-#    restart: always
-#    build:
-#      dockerfile: Dockerfile
-#      context: ./nginx
-#    ports:
-#      - 80:80
+  nginx-proxy:
+    container_name: nginx-proxy
+    depends_on:
+      - backend
+      - frontend
+    restart: always
+    build:
+      dockerfile: Dockerfile
+      context: ./nginx
+    ports:
+      - 80:80
 
 
 
