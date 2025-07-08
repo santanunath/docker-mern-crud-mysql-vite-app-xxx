@@ -67,7 +67,7 @@ setup.sql is executed automatically to create the db-table.
       
 ## Step6:
 > To start interacting with the application, open in a browser     
-`http://localhost:80/`    
+`http://192.168.0.102:80/`    
 Note: Nginx server is running @port80.
 
 
