@@ -14,7 +14,8 @@ starting of the functional component which will DELETE users
 */
 function DeleteUserModal() {
 
-  const BACKEND_API_URL = "http://192.168.0.102:4000";
+ // const VITE_BACKEND_API_URL = "http://192.168.0.102:4000";
+  const VITE_BACKEND_API_URL = import.meta.env.VITE_BACKEND_API_URL;
   
   //using state variables for access of the input fields
   // ------------
@@ -49,7 +50,7 @@ function DeleteUserModal() {
       // -------------
       const res = await axios.request({
         method: "delete",
-        url: BACKEND_API_URL,
+        url: VITE_BACKEND_API_URL,
         data: { id }
       });
 
