@@ -1,6 +1,3 @@
-#  MYSQL_DATABASE: test_db
-#  MYSQL_USER: ronit
-#  MYSQL_PASSWORD: gablu
 # -----
 # contnr1: db (mariadb) @port:3306
 # contnr2: backend (expressjs) @port:4000
