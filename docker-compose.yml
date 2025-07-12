@@ -54,7 +54,8 @@ services:
     environment:
       - VITE_BACKEND_API_URL=http://192.168.0.102:4000 # used in /src/components/Table.jsx, /modals/
       
-
+      #-- --host (allows to access this application from other devices
+      # in same network)
 
 
   nginx-proxy:
